@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "."
-  },
-  "include": [
-    "src", "src/views/suppliers&customers/customers/.jsx"
-  ]
-}
