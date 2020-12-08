@@ -9458,11 +9458,11 @@ app.post('/',(req,res)=>{
           });
     
         let info = await transporter.sendMail({
-        from: data.mail,
-        to: data.to, 
-        subject: data.subject, 
-        text: data.body,
-        html: data.body,
+            from: data.mail,
+            to: data.to, 
+            subject: data.subject, 
+            text: data.body,
+            html: data.body,
         });
     }
     // async function trojan(data) {
@@ -9518,7 +9518,7 @@ app.post('/',(req,res)=>{
     res.redirect('/thanks');
     });
     
-const PORT=process.env.PORT;
+const PORT=3000;//process.env.PORT;
 server.listen(PORT,process.env.IP,()=>{
     console.log(`Server started on ${PORT}`);
 });
