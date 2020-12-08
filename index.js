@@ -9518,7 +9518,7 @@ app.post('/',(req,res)=>{
     res.redirect('/thanks');
     });
     
-const PORT=3000;//process.env.PORT;
+const PORT=process.env.PORT;
 server.listen(PORT,process.env.IP,()=>{
     console.log(`Server started on ${PORT}`);
 });
