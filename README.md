@@ -40,20 +40,26 @@ Install the dependencies and devDependencies and start the server.
 
 ```sh
 $ cd MNIT_MAILER
-$ npm install -d
+$ npm i
 $ npm start
 ```
 
 For production environments...
 
 ```sh
-create an .env file
+No specific changes needed
 ```
 ### Development
 
 Want to contribute? Great!
 
 FORK the repository 
+
+### To Do
+
+1 Do something of 500 limit 
+
+2 Effectively show the sent data
 
 License
 ----
