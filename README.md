@@ -25,3 +25,26 @@ Allow access from your gmail account
 (this options basically allow to sign in to gmail from any location)
 
     1 https://accounts.google.com/b/0/DisplayUnlockCaptcha 
+
+### Installation
+
+MNIT MAILER 📧 requires [Node.js](https://nodejs.org/) v4+ to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ cd MNIT_MAILER
+$ npm install -d
+$ npm start
+```
+
+For production environments...
+
+```sh
+create an .env file
+```
+### Development
+
+Want to contribute? Great!
+
+FORK the repository 
