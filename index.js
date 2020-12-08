@@ -31,6 +31,10 @@ const test_data=[
         mail:'2018uec1747@mnit.ac.in',
         name:"eshaan"
     },
+    {
+        mail:'2017uch1664@mnit.ac.in',
+        name:'ISHIT AGARWAL'
+    }
 
 ]
 const first_year=[
@@ -9518,7 +9522,7 @@ app.post('/',(req,res)=>{
     res.redirect('/thanks');
     });
     
-const PORT=process.env.PORT;
+const PORT=3000//process.env.PORT;
 server.listen(PORT,process.env.IP,()=>{
     console.log(`Server started on ${PORT}`);
 });
