@@ -1,4 +1,4 @@
-# MNIT_MAILER
+# MNIT_MAILER 📧
 
 Easily send mail to everyone in MNIT from any gmail account!
 
