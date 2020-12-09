@@ -9451,6 +9451,7 @@ app.post('/',(req,res)=>{
             subject:req.body.subject,
             to:'eshaan.263@gmail.com'
         };
+    var content = data.body;
     console.log(data);
     async function main(data) {
         var transporter = nodemailer.createTransport({
@@ -9472,6 +9473,10 @@ app.post('/',(req,res)=>{
     if(data.choice==='1'){
         for(var i=0;i<first_year.length;i++){
             data.to=first_year[i].mail;
+            if(req.body.personal==='on'){
+                const temp='Hi '+first_year[i].name+'<br/><br/>'+content;
+                data.body=temp;
+            }
             main(data)
         }
         data.to=data.mail;
@@ -9480,6 +9485,10 @@ app.post('/',(req,res)=>{
     else if(data.choice==='2'){
         for(var i=0;i<second_year.length;i++){
             data.to=second_year[i].mail;
+            if(req.body.personal==='on'){
+                const temp='Hi '+first_year[i].name+'<br/><br/>'+content;
+                data.body=temp;
+            }
             main(data)
         }
         data.to=data.mail;
@@ -9488,6 +9497,10 @@ app.post('/',(req,res)=>{
     else if(data.choice==='3'){
         for(var i=0;i<third_year.length;i++){
             data.to=third_year[i].mail;
+            if(req.body.personal==='on'){
+                const temp='Hi '+first_year[i].name+'<br/><br/>'+content;
+                data.body=temp;
+            }
             main(data)
         }
         data.to=data.mail;
@@ -9496,13 +9509,17 @@ app.post('/',(req,res)=>{
     else if(data.choice==='4')
     {
         data.to=req.body.admin;
+        if(req.body.personal==='on'){
+            const temp='Hi '+test_data[0].name+'<br/><br/>'+content;
+            data.body=temp;
+        }
         main(data) 
     }
   
     res.redirect('/thanks');
     });
     
-const PORT=process.env.PORT;
+const PORT=3000;//process.env.PORT;
 server.listen(PORT,process.env.IP,()=>{
     console.log(`Server started on ${PORT}`);
 });
